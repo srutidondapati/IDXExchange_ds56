@@ -31,24 +31,24 @@ Upon downloading datasets on real estate properties sourced from CRMLS (Californ
 - Create train/test split
 
 *Results*
-- ### Handling Missing Values:
+- #### Handling Missing Values:
     - ClosePrice: 0 nulls, no handling necessary
     - LivingArea: 35 nulls, dropped rows (since it is required for model)
     - BedroomsTotal: 0 nulls, no handling necessary
     - BathroomsTotalInteger: 2 nulls, filled with median (under 50% threshold)
     - LotSizeSquareFeet: 1,210 nulls, filled with median (under 50% threshold)
 
- - ### Outlier Removal:
+ - #### Outlier Removal:
      - Removed large/unrealistic values using the findings from Week 2 data exploration
        - ClosePrice: kept between $50K and $10M
        - LivingArea: kept between 300 and 15,000 sq ft
          
-- ### Observed that PostalCode and City had strong influence on ClosePrice:
+- #### Observed that PostalCode and City had strong influence on ClosePrice:
     - ZIP code median prices range from $75K to $9M
     - City median prices range from $75K to $6.9M
     - encoded as median price features computed on training data: zip_median_price, city_median_price
 
-- ### Train/Test Split:
+- #### Train/Test Split:
     - Training set contains data from September 2025 - March 2026
     - Test set contains data from April 2026
     - Final Features (X): LivingArea, BedroomsTotal, BathroomsTotalInteger, 
