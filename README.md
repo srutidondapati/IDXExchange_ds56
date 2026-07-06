@@ -22,3 +22,35 @@ Upon downloading datasets on real estate properties sourced from CRMLS (Californ
 - Bedrooms: most houses have 3-4 bedrooms
 - Bathrooms: most houses have 2-3 bathrooms
 - Lot Size: most houses have a lot size of around 10k to 15k square footage
+
+### Week 3:
+*Goals*
+- Handle missing values (decide whether to drop, impute, or flag).
+- Convert categorical fields to numeric (encoding).
+- Normalize numerical features if needed.
+- Create train/test split
+
+*Results*
+- ### Handling Missing Values:
+    - ClosePrice: 0 nulls, no handling necessary
+    - LivingArea: 35 nulls, dropped rows (since it is required for model)
+    - BedroomsTotal: 0 nulls, no handling necessary
+    - BathroomsTotalInteger: 2 nulls, filled with median (under 50% threshold)
+    - LotSizeSquareFeet: 1,210 nulls, filled with median (under 50% threshold)
+
+ - ### Outlier Removal:
+     - Removed large/unrealistic values using the findings from Week 2 data exploration
+       - ClosePrice: kept between $50K and $10M
+       - LivingArea: kept between 300 and 15,000 sq ft
+         
+- ### Observed that PostalCode and City had strong influence on ClosePrice:
+    - ZIP code median prices range from $75K to $9M
+    - City median prices range from $75K to $6.9M
+    - encoded as median price features computed on training data: zip_median_price, city_median_price
+
+- ### Train/Test Split:
+    - Training set contains data from September 2025 - March 2026
+    - Test set contains data from April 2026
+    - Final Features (X): LivingArea, BedroomsTotal, BathroomsTotalInteger, 
+      LotSizeSquareFeet, zip_median_price, city_median_price
+    - Target (y): ClosePrice
