@@ -10,7 +10,7 @@ Upon downloading datasets on real estate properties sourced from CRMLS (Californ
 - Download atleast 6 months of raw CSV data from CRMLS
 - Review MetaData to understand important data features and key columns
 
-
+---
 
 ### Week 2:
 *Goals*
