@@ -10,6 +10,8 @@ Upon downloading datasets on real estate properties sourced from CRMLS (Californ
 - Download atleast 6 months of raw CSV data from CRMLS
 - Review MetaData to understand important data features and key columns
 
+
+
 ### Week 2:
 *Goals*
 - Load 6 months of dataset into jupyter notebook using pandas
@@ -22,6 +24,8 @@ Upon downloading datasets on real estate properties sourced from CRMLS (Californ
 - Bedrooms: most houses have 3-4 bedrooms
 - Bathrooms: most houses have 2-3 bathrooms
 - Lot Size: most houses have a lot size of around 10k to 15k square footage
+
+---
 
 ### Week 3:
 *Goals*
