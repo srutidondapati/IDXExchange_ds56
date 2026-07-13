@@ -58,3 +58,20 @@ Upon downloading datasets on real estate properties sourced from CRMLS (Californ
     - Final Features (X): LivingArea, BedroomsTotal, BathroomsTotalInteger, 
       LotSizeSquareFeet, zip_median_price, city_median_price
     - Target (y): ClosePrice
+
+---
+
+### Week 4:
+*Goals*
+- Train a Linear Regression as the first model. 
+- Evaluate using R² on the test set. 
+- Record baseline results. 
+
+*Results*
+- Linear Regression Results: 
+    - Training R²: 0.7778
+    - Test R²: 0.7611
+ 
+- The model had an R² score of 0.7611 on the test set, indicating that it explains approximately 76% of the variation in home sale prices. Both R² results are similar to each other with a difference of 0.0167 representing that the model is generalizing well without overfitting.
+
+ 
