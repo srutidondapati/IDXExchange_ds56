@@ -74,4 +74,25 @@ Upon downloading datasets on real estate properties sourced from CRMLS (Californ
  
 - The model had an R² score of 0.7611 on the test set, indicating that it explains approximately 76% of the variation in home sale prices. Both R² results are similar to each other with a difference of 0.0167 representing that the model is generalizing well without overfitting.
 
- 
+---
+
+### Week 5:
+*Goals*
+- Try Decision Tree and Random Forest regressors. 
+- Compare their test R² against baseline.
+- Document model behavior (strengths/weaknesses). 
+
+*Results*
+- *Best Performing Model* - Random Forest Model
+    - Builds multiple trees on various data subsets and features rather than memorizing patterns
+
+- *Most Stable Model* - Linear Regression Model
+
+- *Weaker Generalization Model* - Decision Tree Model:
+    - Memorizes patterns on training data which doesn't generalize well to the test data
+
+| Model | Train R² | Test R² | R² Difference | Strengths | Weaknesses |
+| -------- | -------- | -------- | -------- | -------- | -------- |
+| Random Forest Regressor | 0.978122  | 0.836335  | 0.141787  | Highest accuracy, captures complex relationships  | Slower training, harder to interpret  |
+| Linear Regression  | 0.777826  | 0.761132  | 0.016694  | Stable, simple and fast  | Struggles to capture nonlinear patterns  |
+| Decision Tree Regressor  | 0.998748  | 0.710998  | 0.28775  | Captures nonlinear patterns  | Overfits easily, unstable  |
