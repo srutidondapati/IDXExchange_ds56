@@ -96,3 +96,35 @@ Upon downloading datasets on real estate properties sourced from CRMLS (Californ
 | Random Forest Regressor | 0.978122  | 0.836335  | 0.141787  | Highest accuracy, captures complex relationships  | Slower training, harder to interpret  |
 | Linear Regression  | 0.777826  | 0.761132  | 0.016694  | Stable, simple and fast  | Struggles to capture nonlinear patterns  |
 | Decision Tree Regressor  | 0.998748  | 0.710998  | 0.28775  | Captures nonlinear patterns  | Overfits easily, unstable  |
+
+---
+
+### Week 6:
+*Goals*
+- Add more sample features you can engineer: bed/bath ratio, age of property in years 
+- Add more detailed geographic layer using school districts
+- Re-train models with the updated feature set. 
+
+*Results*
+
+| Model | Old Test R² | New Test R² | Improvement |
+| -------- | -------- | -------- | -------- |
+| Random Forest Regressor | 0.836335  | 0.865858  | 0.029523  |
+| Linear Regression  | 0.761132  | 0.799203  | 0.038071  |
+| Decision Tree Regressor  | 0.710998  | 0.744029  | 0.033031  |
+
+##### Old Features
+- `LivingArea`, `BedroomsTotal`, `BathroomsTotalInteger`, `LotSizeSquareFeet`, `zip_median_price`, `city_median_price`
+
+##### New Features
+- `property_age`: years since property was built (2026 - YearBuilt)
+- `bed_bath_ratio`: bedrooms divided by bathrooms
+- `district_median_price`: median ClosePrice per Unified School District
+
+##### Conclusion
+
+- All the models had improvement with the new feature set
+    - Most Improvement: Linear Regression had the largest improvement of 0.038
+    - Top Performing Model: Random Forest had the best Test R² score of 0.865858
+- Creating the school district spatial layer (`district_median_price`) provided a tighter price baseline than ZIP codes and city medians alone, improving test accuracy across the models.
+- Adding features like `bed_bath_ratio` and `property_age` helped models account for property condition and layout efficiency increasing model accuracy.
