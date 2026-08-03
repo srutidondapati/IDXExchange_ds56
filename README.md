@@ -149,5 +149,5 @@ Upon downloading datasets on real estate properties sourced from CRMLS (Californ
 - Baseline XGBoost Test R² : 0.868322
 - Tuned XGBoost Test R² : 0.872436
     - Best hyperparameters: `n_estimators=300`, `learning_rate=0.10`, and `max_depth=9`
-          - Larger max_depth allows the model to capture complex relationships
+        - Larger max_depth allows the model to capture complex relationships
     - Increase of 0.004114 over baseline XGBoost
