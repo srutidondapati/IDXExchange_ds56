@@ -128,3 +128,26 @@ Upon downloading datasets on real estate properties sourced from CRMLS (Californ
     - Top Performing Model: Random Forest had the best Test R² score of 0.865858
 - Creating the school district spatial layer (`district_median_price`) provided a tighter price baseline than ZIP codes and city medians alone, improving test accuracy across the models.
 - Adding features like `bed_bath_ratio` and `property_age` helped models account for property condition and layout efficiency increasing model accuracy.
+  
+---
+
+### Week 7:
+*Goals*
+- Try Gradient Boosting (e.g., XGBoost or LightGBM).
+- Perform light hyperparameter tuning (depth, learning rate, n_estimators). 
+
+*Results*
+
+| Model | Test R² |
+| -------- | -------- |
+| Linear Regression | 0.761132  |
+| Decision Tree  | 0.710998  |
+| Random Forest  | 0.836335  |
+| Baseline XGBoost  | 0.868322  |
+| Tuned XGBoost  | 0.872436  |
+
+- Baseline XGBoost Test R² : 0.868322
+- Tuned XGBoost Test R² : 0.872436
+    - Best hyperparameters: `n_estimators=300`, `learning_rate=0.10`, and `max_depth=9`
+          - Larger max_depth allows the model to capture complex relationships
+    - Increase of 0.004114 over baseline XGBoost
